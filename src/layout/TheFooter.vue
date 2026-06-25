@@ -4,14 +4,14 @@
       <div class="d-flex flex-wrap justify-content-between align-items-center">
         <div class="col-md-4 d-flex align-items-center">
           <img
-            :src="vibecodeLogo"
-            alt="VibeCode Logo"
+            :src="sandboxLogo"
+            alt="MK Sandbox Logo"
             width="60"
             height="48"
             class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-            aria-label="MK Vibecode Logo"
+            aria-label="MK Sandbox Logo"
           >
-          <span class="mb-3 mb-md-0 text-body-secondary">© 2026 MK Vibecode</span>
+          <span class="mb-3 mb-md-0 text-body-secondary">© 2026 MK Sandbox</span>
         </div>
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3">
@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import vibecodeLogo from '@/assets/mk-vibecode-logo.svg'
+import sandboxLogo from '@/assets/mk-sandbox-icon.svg'
 import emailIcon from '@/assets/email-icon.png'
 import linkedInIcon from '@/assets/linkedin-icon.png'
 import gitHubIcon from '@/assets/github-icon.png'

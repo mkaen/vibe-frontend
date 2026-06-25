@@ -6,7 +6,7 @@
           to="/"
           class="d-flex align-items-center mb-2 mb-lg-0 me-lg-3 link-body-emphasis text-decoration-none"
         >
-        <img :src=logo alt="VibeCode Logo" width="80" height="65">
+        <img :src=mkSandboxLogo alt="MK Sandbox Logo" width="80" height="65">
         </RouterLink>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -56,5 +56,5 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import logo from '@/assets/mk-vibecode-logo.svg'
+import mkSandboxLogo from '@/assets/mk-sandbox-icon.svg'
 </script>

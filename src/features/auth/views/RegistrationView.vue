@@ -28,7 +28,3 @@ const handleRegistration = async (payload) => {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

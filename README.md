@@ -1,8 +1,8 @@
-# vibe-frontend
+# sandbox-frontend
 
 ## Overview
 
-Vibe-frontend is the frontend application for vibecoding. It communicates with vibe-backend (main backend application). The project uses a feature-based folder structure.
+Sandbox-frontend is the frontend application for the sandbox project. It communicates with sandbox-backend (main backend application). The project uses a feature-based folder structure.
 
 ## Practice
 

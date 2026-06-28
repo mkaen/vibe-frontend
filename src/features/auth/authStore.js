@@ -1,18 +1,19 @@
 import { defineStore } from 'pinia';    
 import { authApi } from '@/config/api';
+import { useUserStore } from '@/features/users/userStore';
 
 export const useAuthStore = defineStore('auth', {
-    state: () => ({
-        token: null,
-        user: null
-    }),
     actions: {
         async login(payload) {
             try {
                 const response = await authApi.post('/login', payload);
                 if (response.status === 200) {
-                    console.log('Login successful');
-                    this.token = response.data.token;
+                    const userData = response.data;
+                    const userStore = useUserStore();
+                    userStore.setUser(userData);
+                    if (userData.imageReference) {
+                        await userStore.setImage(userData.imageReference);
+                    }
                     return true;
                 } else {
                     return false;
@@ -22,13 +23,19 @@ export const useAuthStore = defineStore('auth', {
                 return false;
             }
         },
-        async register(payload) {   
+        async register(payload, image) {   
             try {
                 const response = await authApi.post('/register', payload);
                 if (response.status === 201) {
-                    console.log('Registration successful');
-                    // TODO: Add token to localStorage
-                    // localStorage.setItem('token', response.data.token);
+                    const userData = response.data;
+                    // console.log('Data backend response:', response.data);
+                    const userStore = useUserStore();
+                    userStore.setUser(userData);
+
+                    if (image && userData.imageReference) {
+                        // TODO: "Upload image to cloudflare by naming it profile_imageReference"
+                        await userStore.setImage(image);
+                    }
                     return true;
                 } else {
                     return false;
@@ -38,5 +45,5 @@ export const useAuthStore = defineStore('auth', {
                 return false;
             }
         }
-    }
+    },
 });

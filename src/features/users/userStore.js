@@ -20,7 +20,7 @@ export const useUserStore = defineStore('user', {
             this.lastName = userData.lastName
             this.email = userData.email
             this.phone = userData.phone
-            this.imageReference = userData.imageReference
+            this.imageReference = userData.imageReference || null
             if (userData.role && Object.values(ROLES).includes(userData.role)) {
                 this.role = userData.role
             } else {

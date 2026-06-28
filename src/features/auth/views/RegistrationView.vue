@@ -14,10 +14,9 @@ import { useRouter } from 'vue-router';
 const authStore = useAuthStore();
 const router = useRouter();
 
-const handleRegistration = async (payload) => {
+const handleRegistration = async (payload, image) => {
     try {
-        const response = await authStore.register(payload);
-        console.log('handleRegistration response', response);
+        const response = await authStore.register(payload, image);
         if (response) {
             router.push('/');
         } else {
